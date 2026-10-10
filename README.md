@@ -60,32 +60,39 @@ npm run resume:pdf
 This writes `public/resume.pdf`. Run it (and commit the updated PDF) any time you change
 `src/content/experience.ts`, `education.ts`, `skills.ts`, or `profile.ts`.
 
-## Deployment (Cloudflare Pages)
+## Deployment (GitHub Pages)
 
-This repo is connected to Cloudflare Pages for automatic deployment:
+This repo deploys to **GitHub Pages** automatically via GitHub Actions
+(`.github/workflows/deploy.yml`):
 
+- **Live URL:** https://krbiswas.github.io/krishanu-portfolio/
 - **Production branch:** `main`
-- **Build command:** `npm run build`
-- **Build output directory:** `out`
-- **Framework preset:** none / static (this is a static export, not a Next.js server)
+- **Build command:** `npm run build` (static export to `out/`)
+- **Pages source:** GitHub Actions (set under Settings → Pages in the repo)
+
+Because the site is served from `/krishanu-portfolio/` rather than a domain root,
+`next.config.ts` sets `basePath: "/krishanu-portfolio"` — every internal link and asset path is
+generated with that prefix at build time. If this repo is ever renamed, or moved to a custom
+domain, update (or remove) `basePath` in `next.config.ts` to match.
 
 Normal workflow:
 
 ```
-Edit content in src/content/ → commit → git push → Cloudflare Pages builds & deploys automatically
+Edit content in src/content/ → commit → git push → GitHub Actions builds & deploys automatically
 ```
 
 No environment variables or secrets are required — this site has no backend, no database, and
-no API keys.
+no API keys. You can watch a deployment's progress under the repo's **Actions** tab.
 
 ### Recovering from a failed deploy
 
-1. Check the failed build's log in the Cloudflare Pages dashboard (Workers & Pages → this
-   project → the failed deployment).
+1. Open the repo's **Actions** tab on GitHub and check the failed run's log.
 2. Reproduce locally with `npm run build` — if it fails the same way locally, fix it there, then
    commit and push again.
-3. If a deploy succeeded but the live site looks wrong, Cloudflare Pages keeps every previous
-   deployment — you can roll back to an earlier one from the dashboard while you fix forward.
+3. If a deploy succeeded but the live site looks wrong, GitHub Pages keeps the previous deployment
+   live until a new one finishes — push a fix and the next successful run replaces it.
+4. You can also re-run the latest workflow manually from the Actions tab without a new commit
+   (the workflow supports manual "Run workflow" triggers).
 
 ## Tech notes
 
