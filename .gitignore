@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# internal-only content reference (this repo is PUBLIC — never commit these)
+/PORTFOLIO_PERSONAL_DATA_REFERENCE.md
+/PORTFOLIO_CONTENT_VERIFICATION.md
