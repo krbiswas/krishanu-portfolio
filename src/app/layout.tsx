@@ -58,6 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full flex flex-col">
+        <div className="ambient-field" aria-hidden="true" />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-[var(--radius-sm)] focus:bg-[var(--accent)] focus:px-4 focus:py-2 focus:text-[var(--accent-ink)]"
@@ -65,7 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <Header />
-        <main id="main-content" className="flex-1">
+        <main id="main-content" className="flex-1 pt-20 sm:pt-24">
           {children}
         </main>
         <Footer />

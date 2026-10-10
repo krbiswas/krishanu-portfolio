@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Section, Eyebrow } from "@/components/Section";
+import { GlassSurface } from "@/components/GlassSurface";
+import { MotionReveal } from "@/components/MotionReveal";
 import { profile } from "@/content/profile";
 import { education, earlyWork } from "@/content/education";
 import { skillGroups, interests } from "@/content/skills";
@@ -12,14 +14,16 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Section className="pt-16 sm:pt-20 pb-12">
-        <Eyebrow>About</Eyebrow>
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--ink)] max-w-2xl">
-          What I do today, and how I got here
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-[var(--ink-muted)] leading-relaxed">
-          {profile.summary}
-        </p>
+      <Section className="pt-6 sm:pt-8 pb-12">
+        <MotionReveal>
+          <Eyebrow>About</Eyebrow>
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--ink)] max-w-2xl">
+            What I do today, and how I got here
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg text-[var(--ink-muted)] leading-relaxed">
+            {profile.summary}
+          </p>
+        </MotionReveal>
       </Section>
 
       <Section className="border-t border-[var(--border)] py-16">
@@ -67,8 +71,8 @@ export default function AboutPage() {
             <p>{interests.join(", ")}.</p>
           </div>
 
-          <aside className="space-y-8">
-            <div>
+          <aside className="space-y-6 lg:sticky lg:top-28 self-start">
+            <GlassSurface className="p-5">
               <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--ink-faint)] font-mono">
                 Education
               </h3>
@@ -85,9 +89,9 @@ export default function AboutPage() {
                 <span className="font-medium text-[var(--ink)]">{earlyWork.heading}:</span>{" "}
                 {earlyWork.detail}
               </p>
-            </div>
+            </GlassSurface>
 
-            <div>
+            <GlassSurface className="p-5">
               <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--ink-faint)] font-mono">
                 Skills
               </h3>
@@ -99,7 +103,7 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-            </div>
+            </GlassSurface>
           </aside>
         </div>
       </Section>

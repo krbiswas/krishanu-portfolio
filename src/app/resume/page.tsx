@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <>
-      <Section className="pt-16 sm:pt-20 pb-8">
+      <Section className="pt-6 sm:pt-8 pb-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div>
             <Eyebrow>Resume</Eyebrow>

@@ -37,7 +37,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="Toggle color theme"
-      className="rounded-[var(--radius-sm)] border border-[var(--border)] px-2.5 py-1.5 text-xs font-mono text-[var(--ink-muted)] hover:text-[var(--ink)] hover:border-[var(--border-strong)] transition-colors"
+      className="rounded-full border border-[var(--border)] px-3 py-1.5 text-xs font-mono text-[var(--ink-muted)] hover:text-[var(--ink)] hover:border-[var(--border-strong)] transition-colors duration-[var(--duration-fast)]"
     >
       {theme === "dark" ? "Light" : "Dark"}
     </button>

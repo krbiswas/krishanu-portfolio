@@ -3,7 +3,7 @@ import { Button } from "@/components/Button";
 
 export default function NotFound() {
   return (
-    <Section className="pt-24 pb-24 text-center">
+    <Section className="pt-10 pb-24 text-center">
       <p className="font-mono text-sm text-[var(--ink-faint)]">404</p>
       <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">
         Page not found
