@@ -8,8 +8,8 @@ import { experience } from "@/content/experience";
 
 const featuredSlugs = [
   "enterprise-automotive-lms-migration",
-  "knowledge-anywhere-migration",
-  "seismic-link-auditor",
+  "migration-discovery-qa-automation",
+  "ai-roleplay-export-validation-pipeline",
 ];
 
 export default function Home() {

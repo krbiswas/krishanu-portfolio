@@ -13,7 +13,7 @@ export const skillGroups = [
   },
   {
     group: "Technical & Automation",
-    items: ["Workflow Automation", "AI-Assisted Tooling", "SQL (Foundational)", "Analytics"],
+    items: ["Playwright Browser Automation", "Python", "TypeScript / Node.js", "AI-Assisted Tooling", "SQL (Foundational)"],
   },
   {
     group: "Digital & Marketing",
